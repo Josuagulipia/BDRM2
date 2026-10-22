@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Petualangan Motif Dayak</title>
+<style>
+:root{--bg:#eef2ea;--c:#fff;--tx:#1f2a24;--mu:#55625a;--pr:#0b5d4b;--rd:#b3261e;--yl:#f2b705;--ok:#146c2e;--bd:#cdd8cc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141b17;--c:#1e2823;--tx:#eef3ee;--mu:#a9b7ae;--pr:#5ad1b0;--rd:#ff8a80;--yl:#f2c94c;--ok:#7ddf9a;--bd:#34443b}}
+:root[data-theme=dark]{--bg:#141b17;--c:#1e2823;--tx:#eef3ee;--mu:#a9b7ae;--pr:#5ad1b0;--rd:#ff8a80;--yl:#f2c94c;--ok:#7ddf9a;--bd:#34443b}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--tx);color:var(--tx);font:calc(17px*var(--fs,1))/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:.4em 0}
+.strip{height:14px;background:repeating-linear-gradient(135deg,var(--rd) 0 10px,var(--yl) 10px 20px,#111 20px 30px)}
+nav{display:flex;gap:6px;flex-wrap:wrap;padding:8px;background:var(--c);border-bottom:2px solid var(--bd);position:sticky;top:0;z-index:5}
+button,input,textarea{font:inherit;color:inherit}
+button{min-height:48px;padding:8px 16px;border-radius:12px;border:2px solid var(--pr);background:var(--c);cursor:pointer;font-weight:600}
+button.p{background:var(--pr);color:var(--c)}button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--yl);outline-offset:2px}
+main{max-width:960px;margin:0 auto;padding:16px}
+.card{background:var(--c);border:2px solid var(--bd);border-radius:16px;padding:16px;margin:12px 0}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.g{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.st b{font-size:1.6em;display:block;font-family:Georgia,serif}
+.bar{height:16px;border-radius:9px;background:var(--bd);overflow:hidden}.bar i{display:block;height:100%;background:var(--pr);transition:width .5s}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}.ok{border-color:var(--ok)!important;background:color-mix(in srgb,var(--ok) 20%,var(--c))!important}.no{border-color:var(--rd)!important;background:color-mix(in srgb,var(--rd) 18%,var(--c))!important}.sel{outline:3px solid var(--yl)}
+input,textarea{width:100%;padding:10px;border:2px solid var(--bd);border-radius:10px;background:var(--c)}
+.tw{overflow-x:auto}table{border-collapse:collapse;min-width:520px}td,th{border:1px solid var(--bd);padding:8px;vertical-align:top;text-align:left}
+.mat{max-width:68ch}.mat p,.mat li{margin:.6em 0}
+.hero{text-align:center;padding:24px 8px}.hero .ch{font-size:72px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.cf{position:fixed;top:-20px;z-index:99;font-style:normal;font-size:24px;animation:fall 2.2s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(105vh) rotate(360deg)}}
+.noanim *{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.focus nav,.focus .toc{display:none}
+.big button{min-height:60px}
+@media print{nav,.noprint,.strip{display:none}body{background:#fff;color:#000}}
+.cert{text-align:center;border:6px double var(--pr);padding:32px}
+</style></head><body><div class="strip"></div><nav id="nv" aria-label="Menu utama"></nav><main id="app" tabindex="-1"></main>
+<script>
+// ===== DATA MATERI ASLI (tidak diubah; ditampilkan dengan textContent) =====
+const MAT=[
+{h:"A. Pendahuluan",b:[
+"Pada materi sebelumnya, kita telah belajar merancang motif Dayak sederhana. Kita mempelajari cara memilih inspirasi dari alam, menyederhanakan bentuk, menggunakan garis, membuat pola berulang, mengatur simetri, serta memilih warna. Pada materi ini, kita akan melangkah lebih jauh: membuat rancangan motif yang terinspirasi dari cerita rakyat Kalimantan Tengah.",
+"Cerita rakyat bukan hanya hiburan. Di dalamnya dapat ditemukan tokoh, tempat, peristiwa, nilai kehidupan, serta hubungan manusia dengan alam. Unsur-unsur tersebut dapat menjadi sumber ide untuk membuat karya seni. Saat membuat motif, kita tidak perlu menggambar seluruh cerita. Kita dapat memilih satu bagian penting, lalu mengubahnya menjadi bentuk hias yang sederhana."]},
+{h:"B. Tujuan Pembelajaran",b:[{ul:[
+"Menjelaskan hubungan cerita rakyat dengan karya motif.",
+"Mengenali tokoh, latar, benda, dan nilai yang terdapat dalam cerita rakyat Kalimantan Tengah.",
+"Memilih unsur cerita sebagai inspirasi motif.",
+"Membuat rancangan motif dengan garis, bentuk, pola berulang, simetri, dan warna.",
+"Menjelaskan makna rancangan motif dengan bahasa sendiri serta menghargai budaya daerah."]}]},
+{h:"C. Apa Hubungan Cerita Rakyat dengan Motif?",b:[
+"Motif adalah bentuk atau gambar yang disusun untuk menghias suatu benda. Motif dapat mengambil inspirasi dari alam, hewan, tumbuhan, benda budaya, maupun cerita yang dikenal masyarakat. Jika inspirasi berasal dari cerita rakyat, motif yang dibuat dapat disebut motif rancangan yang terinspirasi cerita rakyat. Istilah ini tidak berarti bahwa motif tersebut otomatis merupakan motif tradisional asli.",
+"Contohnya:",{ul:[
+"Tokoh dalam cerita dapat menginspirasi bentuk utama motif.",
+"Sungai atau hutan dalam cerita dapat menginspirasi garis lengkung, gelombang, daun, atau pepohonan.",
+"Perjalanan tokoh dapat digambarkan melalui pola garis yang berkelok atau berulang.",
+"Pesan cerita, seperti kejujuran atau kepedulian, dapat dijelaskan sebagai makna yang ingin disampaikan pembuat karya."]}]},
+{h:"D. Mengenal Cerita Rakyat Kalimantan Tengah: Nyai Balau",b:[
+"Nyai Balau merupakan salah satu cerita rakyat dari Kalimantan Tengah. Cerita yang diterbitkan Badan Pengembangan dan Pembinaan Bahasa ini berkisah tentang Nyai Balau, putri dari Kerajaan Palangka yang diculik. Supak, seorang pemuda yang dikenal jujur dan tekun, mendapat tugas untuk menyelamatkannya. Dalam perjalanan, Supak menghadapi berbagai rintangan dan pengkhianatan, tetapi ia tetap berusaha menjalankan tugasnya. Kisah ini mengingatkan pembaca tentang pentingnya kejujuran, ketekunan, dan kebaikan.",
+{s:"1. Mengambil unsur cerita sebagai inspirasi"},
+{t:[["Unsur cerita","Contoh yang dapat dipilih","Kemungkinan ide motif"],
+["Tokoh","Nyai Balau atau Supak","Siluet tokoh sederhana atau bentuk simbolis; tidak harus menyerupai tokoh secara realistis."],
+["Perjalanan","Usaha Supak menghadapi rintangan","Garis berkelok, garis bertahap, atau pola yang bergerak menuju tujuan."],
+["Tempat/lingkungan","Kerajaan, hutan, atau lingkungan perjalanan","Bentuk bangunan sederhana, daun, pakis, atau garis tumbuhan."],
+["Nilai cerita","Kejujuran dan ketekunan","Pola yang teratur dan konsisten sebagai simbol pribadi tentang ketekunan."]]},
+{s:"2. Contoh pengembangan ide motif"},
+"Misalnya, seorang siswa ingin membuat motif bertema ketekunan Supak. Siswa tersebut memilih garis berkelok sebagai lambang perjalanan, daun sebagai unsur alam, dan bentuk utama sederhana di bagian tengah. Garis berkelok diulang di sisi kiri dan kanan, kemudian diberi warna yang serasi. Siswa dapat menjelaskan: “Saya memilih garis perjalanan dan daun untuk menggambarkan usaha yang terus dilakukan serta lingkungan tempat cerita berlangsung.” Ini adalah penafsiran pribadi siswa, bukan makna adat yang wajib diikuti."]},
+{h:"E. Langkah-Langkah Membuat Motif dari Cerita Rakyat",b:[
+{s:"Langkah 1 — Pahami cerita"},"Baca cerita atau ringkasannya. Cari tahu siapa tokohnya, apa masalahnya, di mana peristiwa berlangsung, dan nilai apa yang dapat dipelajari.",
+{s:"Langkah 2 — Pilih satu ide utama"},"Pilih satu unsur yang paling menarik, misalnya tokoh, perjalanan, tumbuhan, tempat, atau nilai cerita. Jangan memasukkan semua unsur sekaligus.",
+{s:"Langkah 3 — Buat daftar bentuk"},"Tuliskan 2–4 bentuk yang mungkin digunakan. Contoh: daun, garis berkelok, bentuk geometris, dan simbol sederhana.",
+{s:"Langkah 4 — Sederhanakan bentuk"},"Ubah bentuk menjadi garis dan bentuk dasar. Hilangkan detail yang tidak diperlukan, tetapi pertahankan ciri yang membuat ide mudah dikenali.",
+{s:"Langkah 5 — Susun komposisi"},"Tentukan bentuk utama dan bentuk pendukung. Atur jarak agar gambar tidak terlalu padat atau terlalu kosong.",
+{s:"Langkah 6 — Buat pola berulang atau simetri"},"Ulangi bentuk secara horizontal, vertikal, diagonal, atau melingkar. Jika cocok, buat sisi kiri dan kanan yang seimbang.",
+{s:"Langkah 7 — Pilih warna"},"Tentukan satu warna utama dan beberapa warna pendukung. Pertimbangkan kontras agar bentuk mudah dilihat.",
+{s:"Langkah 8 — Beri judul dan penjelasan makna"},"Tuliskan judul motif, cerita yang menginspirasi, serta alasan memilih bentuk dan warna. Jelaskan sebagai gagasan karya sendiri."]},
+{h:"F. Contoh Rancangan Motif",b:[
+{s:"“Jejak Ketekunan” — inspirasi dari cerita Nyai Balau"},{ul:[
+"Bentuk utama: garis berkelok yang mengarah ke bagian tengah.",
+"Bentuk pendukung: dua bentuk daun sederhana di sisi kiri dan kanan.",
+"Pola: daun diulang bergantian dengan garis pendek.",
+"Keseimbangan: sisi kiri dan kanan dibuat hampir sama.",
+"Warna: siswa memilih warna yang disukai dan dapat menjelaskan alasan pemilihannya.",
+"Makna rancangan: garis berkelok menggambarkan perjalanan yang tidak selalu mudah; bentuk daun mengingatkan pada lingkungan alam. Makna ini merupakan penafsiran pembuat karya."]},
+"Rancangan di atas hanya contoh ide. Siswa tidak harus menirunya. Siswa boleh memilih bagian cerita lain atau memakai cerita rakyat Kalimantan Tengah yang telah dibaca bersama keluarga, asalkan dapat menjelaskan sumber inspirasinya."]}
+];
+// ===== DATA TANTANGAN (terpisah dari materi asli) =====
+const STEPS=["Pahami cerita","Pilih satu ide utama","Buat daftar bentuk","Sederhanakan bentuk","Susun komposisi","Buat pola berulang atau simetri","Pilih warna","Beri judul dan penjelasan makna"];
+const A={
+tf1:{id:"tf1",ty:"tf",q:"Motif rancangan yang terinspirasi cerita rakyat otomatis merupakan motif tradisional asli.",a:false,ex:"Bagian C: istilah itu tidak berarti motifnya otomatis motif tradisional asli."},
+mc1:{id:"mc1",ty:"mc",q:"Menurut materi, perjalanan tokoh dapat digambarkan melalui ...",o:["pola garis yang berkelok atau berulang","satu warna tanpa bentuk","gambar seluruh cerita secara realistis","huruf-huruf besar saja","bentuk persegi tanpa pola"],ex:"Bagian C: perjalanan tokoh dapat digambarkan melalui pola garis yang berkelok atau berulang."},
+fl1:{id:"fl1",ty:"type",q:"Lengkapi: Motif adalah bentuk atau gambar yang disusun untuk ___ suatu benda. (ketik satu kata)",kw:[["menghias","hias"]],ex:"Bagian C: motif adalah bentuk atau gambar yang disusun untuk menghias suatu benda."},
+mt1:{id:"mt1",ty:"match",q:"Pasangkan unsur cerita dengan kemungkinan ide motifnya.",pairs:[["Tokoh","Siluet tokoh sederhana atau bentuk simbolis"],["Perjalanan","Garis berkelok, garis bertahap, atau pola yang bergerak menuju tujuan"],["Tempat/lingkungan","Bentuk bangunan sederhana, daun, pakis, atau garis tumbuhan"],["Nilai cerita","Pola yang teratur dan konsisten"]],ex:"Lihat tabel pada Bagian D, subbagian 1."},
+mc2:{id:"mc2",ty:"mc",q:"Supak dalam cerita Nyai Balau dikenal sebagai pemuda yang ...",o:["jujur dan tekun","penakut dan pemalas","kaya dan berkuasa","pandai berdagang","suka berpindah tempat"],ex:"Bagian D: Supak adalah pemuda yang dikenal jujur dan tekun."},
+tf2:{id:"tf2",ty:"tf",q:"Penafsiran makna motif oleh siswa adalah makna adat yang wajib diikuti.",a:false,ex:"Bagian D: itu penafsiran pribadi siswa, bukan makna adat yang wajib diikuti."},
+or1:{id:"or1",ty:"order",q:"Urutkan langkah membuat motif dari cerita rakyat (dari langkah 1 sampai 8).",items:STEPS,ex:"Lihat Bagian E: Langkah 1 sampai Langkah 8."},
+mc3:{id:"mc3",ty:"mc",q:"Berapa bentuk yang dianjurkan untuk dituliskan pada Langkah 3?",o:["2–4 bentuk","1 bentuk","5–7 bentuk","10 bentuk","semua bentuk dalam cerita"],ex:"Bagian E, Langkah 3: tuliskan 2–4 bentuk."},
+tf3:{id:"tf3",ty:"tf",q:"Pada Langkah 2, siswa dianjurkan memasukkan semua unsur cerita sekaligus.",a:false,ex:"Langkah 2: pilih satu ide utama, jangan memasukkan semua unsur sekaligus."},
+fl2:{id:"fl2",ty:"type",q:"Pada contoh “Jejak Ketekunan”, apa bentuk utamanya? (ketik jawabanmu)",kw:[["garis berkelok","berkelok","kelok"]],ex:"Bagian F: bentuk utamanya garis berkelok yang mengarah ke bagian tengah."},
+mc4:{id:"mc4",ty:"mc",q:"Kasus: Rina ingin memakai cerita rakyat Kalimantan Tengah yang dibacanya bersama keluarga. Apa syaratnya menurut materi?",o:["Ia dapat menjelaskan sumber inspirasinya","Ia harus meniru contoh “Jejak Ketekunan”","Ia harus menggambar seluruh cerita","Ia harus memakai cerita Nyai Balau saja","Ia tidak perlu menjelaskan apa pun"],ex:"Bagian F: boleh memakai cerita lain asalkan dapat menjelaskan sumber inspirasinya."},
+tk1:{id:"tk1",ty:"task",q:"Tugas praktik: rancang motifmu sendiri mengikuti 8 langkah, lalu isi rancangannya di bawah. Gambar motifnya di buku/kertas, lalu tulis ringkasannya di sini.",f:["Judul motif","Cerita yang menginspirasi","Bentuk yang dipilih (2–4 bentuk)","Pola berulang / simetri yang dipakai","Warna dan alasan memilihnya","Makna rancangan (gagasan karya sendiri)"],crit:"Kriteria: satu ide utama, bentuk sederhana, ada pola berulang/simetri, warna jelas, makna dijelaskan sebagai gagasan sendiri."}};
+const M=[
+{id:"m1",t:"Misi 1: Cerita dan Motif",src:"Bagian C",i:"Kenali hubungan cerita rakyat dengan motif.",a:["tf1","mc1","fl1"]},
+{id:"m2",t:"Misi 2: Menyusuri Nyai Balau",src:"Bagian D",i:"Ikuti perjalanan Supak dan ambil unsur ceritanya.",a:["mt1","mc2","tf2"]},
+{id:"m3",t:"Misi 3: Delapan Langkah",src:"Bagian E",i:"Susun langkah membuat motif.",a:["or1","mc3","tf3"]},
+{id:"m4",t:"Misi 4: Rancang Motifmu",src:"Bagian F",i:"Pelajari contoh lalu buat rancanganmu.",a:["fl2","mc4","tk1"]},
+{id:"boss",boss:1,t:"Bos: Raja Garis Kusut",src:"Bagian C–F",i:"Raja Garis Kusut mengacaukan motifmu! Gabungkan semua yang sudah kamu pelajari.",a:["tf1","mc1","fl1","mc3","or1"]}];
+// ===== STATE =====
+const D={name:"",pts:0,done:{},best:{},got:{},read:{},min:70,snd:1,anim:1,fs:1,bon:{},task:{},cd:""};let S={...D};
+try{Object.assign(S,JSON.parse(localStorage.getItem("mdk")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("mdk",JSON.stringify(S))}catch(e){}};
+const $=id=>document.getElementById(id),RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function h(t,a,...k){const e=document.createElement(t);for(const x in a||{}){if(x==="class")e.className=a[x];else if(x.slice(0,2)==="on")e.addEventListener(x.slice(2),a[x]);else if(x.slice(0,5)==="aria-")e.setAttribute(x,a[x]);else if(a[x]===true)e.setAttribute(x,"");else if(a[x]!==false)e.setAttribute(x,a[x])}k.flat().forEach(c=>{if(c!=null&&c!==false)e.append(c instanceof Node?c:document.createTextNode(c))});return e}
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+let AC;function snd(f,d=.12){if(!S.snd)return;try{AC=AC||new AudioContext();const o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;g.gain.value=.05;o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+d)}catch(e){}}
+function conf(){if(!S.anim||RM)return;for(let i=0;i<30;i++){const s=h("i",{class:"cf"},["🟡","🔴","⚫","🍃"][i%4]);s.style.left=Math.random()*100+"vw";s.style.animationDelay=Math.random()*.6+"s";document.body.append(s);setTimeout(()=>s.remove(),3000)}}
+const lv=()=>Math.floor(S.pts/50)+1,nDone=()=>M.filter(m=>S.done[m.id]).length,pct=()=>Math.round(nDone()/M.length*100);
+const badges=()=>[["Pembaca Hebat","📖",MAT.every((_,i)=>S.read[i])],["Ahli Konsep","💡",S.done.m1&&S.done.m2],["Pemecah Masalah","🧩",S.done.m3&&S.done.m4],["Penakluk Bos","🐉",!!S.done.boss]];
+const avg=()=>Math.round(M.reduce((s,m)=>s+(S.best[m.id]||0),0)/M.length);
+function add(n){const o=lv();S.pts+=n;save();if(lv()>o){snd(880,.3);conf()}}
+// ===== NAVIGASI =====
+let V="home",ri=0;
+function go(v,x){V=v;if(x!==undefined)ri=x;document.body.classList.toggle("noanim",!S.anim);document.documentElement.style.setProperty("--fs",S.fs);const n=$("nv");n.replaceChildren(...[["home","🏠 Beranda"],["dash","🗺️ Peta Misi"],["read","📖 Baca Materi Asli"],["help","❓ Bantuan"],["teach","🧑‍🏫 Guru"],["cert","🏅 Sertifikat"]].map(([k,l])=>h("button",{class:V===k?"p":"","aria-current":V===k?"page":"false",onclick:()=>{snd(520,.05);go(k)}},l)),h("button",{onclick:()=>{S.snd=S.snd?0:1;save();go(V)},"aria-pressed":!!S.snd},S.snd?"🔊 Suara aktif":"🔇 Suara mati"));const a=$("app");a.replaceChildren();({home,dash,read,help,teach,cert}[V])(a);scrollTo(0,0)}
+function home(a){a.append(h("div",{class:"hero"},h("div",{class:"ch","aria-hidden":"true"},"🖌️"),h("h1",{},"Petualangan Motif Dayak"),h("p",{},"Mulok kelas XII · Mengembangkan Motif Dayak Berdasarkan Cerita Rakyat Kalimantan Tengah"),h("p",{},"Hai! Aku Tara, pemandu garismu. Ayo ubah satu bagian cerita rakyat menjadi rancangan motif."),h("div",{class:"card"},h("label",{for:"nm"},"Nama panggilan"),h("input",{id:"nm",value:S.name,maxlength:20,placeholder:"Contoh: Rina"})),h("div",{class:"row",style:"justify-content:center"},h("button",{class:"p",onclick:()=>{S.name=$("nm").value.trim()||"Petualang";save();snd(660);go("dash")}},"Mulai Petualangan"),h("button",{onclick:()=>{S.name=$("nm").value.trim()||S.name||"Petualang";save();next()}},"Lanjutkan Belajar"),h("button",{onclick:()=>go("help")},"Petunjuk Permainan")),h("div",{class:"card"},h("p",{},"Progres: "+pct()+"%"),h("div",{class:"bar"},h("i",{style:"width:"+pct()+"%"}))),h("p",{class:"noprint",style:"color:var(--mu)"},"Progres disimpan di browser perangkat ini dan tidak otomatis pindah ke perangkat lain.")))}
+function unl(i){return i===0||S.done[M[i-1].id]}
+function next(){const i=M.findIndex((m,j)=>!S.done[m.id]&&unl(j));i<0?go("dash"):run(i)}
+function dash(a){a.append(h("h2",{},"Halo, "+(S.name||"Petualang")+"!"),h("div",{class:"g"},[["Poin",S.pts],["Level",lv()],["Misi selesai",nDone()+"/"+M.length],["Kemajuan",pct()+"%"]].map(([l,v])=>h("div",{class:"card st"},h("b",{},String(v)),l))),h("div",{class:"bar"},h("i",{style:"width:"+pct()+"%"})),h("div",{class:"card"},h("h3",{},"Lencana"),h("div",{class:"row"},badges().map(([n,e,ok])=>h("span",{style:"padding:8px 12px;border:2px solid var(--"+(ok?"yl":"bd")+");border-radius:20px;opacity:"+(ok?1:.5)},e+" "+n+(ok?"":" (terkunci)"))))),h("button",{class:"p",onclick:next},"Lanjutkan dari misi terakhir"),h("h3",{},"Peta Misi"),...M.map((m,i)=>h("div",{class:"card"},h("h3",{},(S.done[m.id]?"✅ ":unl(i)?"🔓 ":"🔒 ")+m.t),h("p",{},m.i+" (Ulas: "+m.src+")"),h("div",{class:"row"},h("button",{class:"p",disabled:!unl(i),onclick:()=>run(i)},S.done[m.id]?"Main lagi":"Mulai misi"),S.best[m.id]!=null&&h("span",{},"Skor terbaik: "+S.best[m.id])))),h("div",{class:"card tw"},h("h3",{},"Rekap"),h("table",{},h("tr",{},["Misi","Skor terbaik","Perlu diulas"].map(x=>h("th",{},x))),M.map(m=>h("tr",{},h("td",{},m.t),h("td",{},S.best[m.id]!=null?String(S.best[m.id]):"-"),h("td",{},S.best[m.id]==null||S.best[m.id]<100?m.src:"—"))))),h("button",{class:"noprint",onclick:()=>print()},"Cetak rekap"))}
+// ===== BACA MATERI =====
+function read(a){const sec=MAT[ri],body=h("div",{class:"mat"},h("h2",{},sec.h));sec.b.forEach(x=>{if(typeof x==="string")body.append(h("p",{},x));else if(x.ul)body.append(h("ul",{},x.ul.map(l=>h("li",{},l))));else if(x.s)body.append(h("h3",{},x.s));else body.append(h("div",{class:"tw",tabindex:0,role:"region","aria-label":"Tabel, dapat digulir"},h("table",{},x.t.map((r,i)=>h("tr",{},r.map(c=>h(i?"td":"th",{},c)))))))});
+a.append(h("div",{class:"row noprint"},h("button",{onclick:()=>{S.fs=Math.min(1.6,S.fs+.1);save();go("read")}},"A+"),h("button",{onclick:()=>{S.fs=Math.max(.8,S.fs-.1);save();go("read")}},"A−"),h("button",{onclick:()=>{document.body.classList.toggle("focus")}},"Mode fokus"),h("button",{onclick:()=>go("dash")},"Kembali ke peta misi")),h("div",{class:"row",style:"align-items:flex-start"},h("div",{class:"toc card",style:"flex:1 1 220px"},h("strong",{},"Daftar isi"),MAT.map((s,i)=>h("button",{class:"opt"+(i===ri?" sel":""),onclick:()=>go("read",i)},(S.read[i]?"✓ ":"")+s.h))),h("div",{class:"card",style:"flex:3 1 320px"},body,h("div",{class:"row"},h("button",{disabled:!ri,onclick:()=>go("read",ri-1)},"Sebelumnya"),h("button",{class:"p",onclick:()=>{S.read[ri]=1;save();if(badges()[0][2]&&!S.rb){S.rb=1;add(20);conf()}go("read",ri)}},S.read[ri]?"✓ Sudah dibaca":"Tandai sudah dibaca"),h("button",{disabled:ri>=MAT.length-1,onclick:()=>go("read",ri+1)},"Berikutnya")))))}
+// ===== TANTANGAN =====
+function run(mi,ai=0){V="play";const m=M[mi],a=$("app");a.replaceChildren();if(ai>=m.a.length)return fin(mi);const q=A[m.a[ai]],box=h("div",{class:"card"});a.append(h("h2",{},m.t),h("p",{},"Tantangan "+(ai+1)+" dari "+m.a.length+(m.boss?" · Tingkat kesulitan: sulit":"")),h("div",{class:"bar"},h("i",{style:"width:"+ai/m.a.length*100+"%"})),h("div",{class:"card"},h("h3",{},q.q),box),h("button",{onclick:()=>go("dash")},"Keluar ke peta"));
+let fb=h("div",{role:"status","aria-live":"polite"});a.children[3].append(fb);
+const end=(r,msg)=>{const k=q.id+(m.boss?"@b":""),pv=S.got[k]||0,mul=m.boss?2:1,gain=Math.max(0,Math.round(r*10*mul)-Math.round(pv*10*mul));S.got[k]=Math.max(pv,r);if(gain)add(gain);else save();snd(r===1?784:260,.2);fb.replaceChildren(h("p",{class:r===1?"ok":"no",style:"padding:8px;border-radius:10px"},(r===1?"🎉 Benar! ":"Belum tepat. ")+msg+" ("+Math.round(r*100)+"%"+(gain?", +"+gain+" poin":"")+")"),h("p",{},"Penjelasan: "+q.ex),h("div",{class:"row"},r<1&&h("button",{onclick:()=>run(mi,ai)},"Coba lagi"),h("button",{class:"p",onclick:()=>run(mi,ai+1)},"Lanjut")))};
+R[q.ty](q,box,end)}
+const R={
+mc(q,b,end){const c=q.o[0],L="ABCDE";sh(q.o).forEach((o,i)=>b.append(h("button",{class:"opt",onclick:e=>{b.querySelectorAll("button").forEach(x=>x.disabled=true);e.target.classList.add(o===c?"ok":"no");end(o===c?1:0,"")}},L[i]+". "+o)))},
+tf(q,b,end){[["Benar",true],["Salah",false]].forEach(([l,v])=>b.append(h("button",{class:"opt",onclick:e=>{b.querySelectorAll("button").forEach(x=>x.disabled=true);e.target.classList.add(v===q.a?"ok":"no");end(v===q.a?1:0,"")}},l)))},
+type(q,b,end){const i=h("input",{"aria-label":"Jawaban",autocomplete:"off"});b.append(i,h("button",{class:"p",onclick:()=>{const t=i.value.toLowerCase(),ok=q.kw.filter(g=>g.some(w=>t.includes(w))).length;i.disabled=true;end(ok/q.kw.length,"Jawaban yang diterima antara lain: "+q.kw[0].join(" / ")+".")}},"Periksa"))},
+match(q,b,end){let sel=null,done=0,mist=0;const L=h("div"),Rr=h("div");const mk=(c,side,w)=>h("button",{class:"opt","data-w":w,onclick:e=>{const x=e.target;if(x.disabled)return;if(!sel||sel.side!==side&&0){}if(!sel||sel.s===side){sel&&sel.e.classList.remove("sel");sel={e:x,s:side,w};x.classList.add("sel");return}if(sel.w===w){[sel.e,x].forEach(y=>{y.disabled=true;y.classList.remove("sel");y.classList.add("ok")});sel=null;if(++done===q.pairs.length)end(Math.max(0,1-mist/q.pairs.length),mist+" salah pasang.")}else{mist++;snd(200,.1);sel.e.classList.remove("sel");sel=null}}},c);
+q.pairs.forEach(p=>L.append(mk(p[0],"l",p[0])));sh(q.pairs).forEach(p=>Rr.append(mk(p[1],"r",p[0])));b.append(h("p",{},"Klik satu istilah di kiri, lalu pasangannya di kanan."),h("div",{class:"g",style:"grid-template-columns:1fr 1fr"},L,Rr))},
+order(q,b,end){let it=sh(q.items);if(it.join()===q.items.join())it.reverse();const l=h("div");const draw=()=>{l.replaceChildren(...it.map((t,i)=>h("div",{class:"row"},h("button",{"aria-label":"Naik",disabled:!i,onclick:()=>{[it[i-1],it[i]]=[it[i],it[i-1]];draw()}},"↑"),h("button",{"aria-label":"Turun",disabled:i===it.length-1,onclick:()=>{[it[i+1],it[i]]=[it[i],it[i+1]];draw()}},"↓"),h("span",{style:"flex:1"},t))))};draw();b.append(l,h("button",{class:"p",onclick:e=>{const n=it.filter((t,i)=>t===q.items[i]).length;e.target.disabled=true;end(n/it.length,n+" dari "+it.length+" langkah sudah tepat.")}},"Periksa urutan"))},
+task(q,b,end){const f=q.f.map(x=>h("div",{},h("label",{},x),h("textarea",{rows:2})));b.append(h("p",{},q.crit),f,h("p",{style:"color:var(--mu)"},"Unggah berkas belum tersedia di versi ini; tunjukkan gambarmu langsung kepada guru."),h("button",{class:"p",onclick:()=>{const v=[...b.querySelectorAll("textarea")].map(t=>t.value.trim());if(v.some(x=>!x)){alert("Isi semua kolom dulu.");return}S.task=Object.fromEntries(q.f.map((x,i)=>[x,v[i]]));end(1,"Rancanganmu tersimpan di perangkat ini. Guru menilai gambarnya.")}},"Simpan rancangan"))}};
+function fin(mi){const m=M[mi],a=$("app");const sc=Math.round(m.a.reduce((s,id)=>s+(S.got[id+(m.boss?"@b":"")]||0),0)/m.a.length*100),ok=!m.boss||sc>=S.min;S.best[m.id]=Math.max(S.best[m.id]||0,sc);let ex="";if(ok){S.done[m.id]=1;if(sc===100&&!S.bon[m.id]){S.bon[m.id]=1;add(20);ex+=" Bonus +20 tanpa kesalahan."}if(m.boss&&!S.bon.b2){S.bon.b2=1;add(50);ex+=" Poin bos +50."}if(m.boss&&!S.cd)S.cd=new Date().toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"});conf();snd(988,.4)}save();
+a.append(h("div",{class:"card hero"},h("div",{class:"ch"},ok?(m.boss?"🐉":"🎉"):"💪"),h("h2",{},ok?(m.boss?"Raja Garis Kusut dikalahkan!":"Misi selesai!"):"Belum tuntas"),h("p",{},"Skor: "+sc+" (batas lulus bos: "+S.min+")."+ex),!ok&&h("p",{},"Pelajari kembali "+m.src+" di Baca Materi Asli, lalu coba lagi."),h("div",{class:"row",style:"justify-content:center"},!ok&&h("button",{onclick:()=>go("read",MAT.findIndex(s=>s.h.startsWith("C")))},"Baca materi"),h("button",{onclick:()=>run(mi)},"Ulangi"),h("button",{class:"p",onclick:()=>go("dash")},"Peta misi"),ok&&mi<M.length-1&&h("button",{class:"p",onclick:()=>run(mi+1)},"Misi berikutnya"))))}
+// ===== HALAMAN LAIN =====
+function help(a){a.append(h("h2",{},"Pusat Bantuan"),...[["Cara bermain","Baca materi, pilih misi di peta, kerjakan tantangan satu per satu. Misi terbuka berurutan."],["Cara mendapat poin","Tiap tantangan bernilai sampai 10 poin (20 untuk bos). Skor 100 pada misi memberi bonus 20. Salah tidak mengurangi poin dan boleh dicoba lagi."],["Pilihan ganda dan benar/salah","Pilih satu jawaban."],["Mencocokkan","Klik istilah kiri, lalu pasangannya di kanan."],["Mengurutkan","Gunakan tombol ↑ dan ↓, lalu tekan Periksa."],["Mengetik jawaban","Ketik kata kunci; bentuk sinonim yang tercantum diterima."],["Tugas praktik","Isi semua kolom rancangan; gambar ditunjukkan ke guru."],["Penyimpanan","Progres tersimpan di browser perangkat ini, tidak di server, dan tidak pindah ke perangkat lain."]].map(([t,d])=>h("div",{class:"card"},h("h3",{},t),h("p",{},d))),h("button",{class:"p",onclick:()=>go("dash")},"Kembali ke dashboard"))}
+function teach(a){a.append(h("h2",{},"Mode Guru"),h("div",{class:"card"},h("p",{},"Pengaturan ini hanya tersimpan di perangkat ini dan tidak dilindungi kata sandi. Untuk autentikasi guru sungguhan diperlukan backend. Pengaturan tidak mengubah teks materi asli."),h("label",{for:"mn"},"Nilai minimum menuntaskan bos (0–100)"),h("input",{id:"mn",type:"number",min:0,max:100,value:S.min}),h("label",{},h("input",{type:"checkbox",id:"an",checked:!!S.anim,style:"width:auto"})," Animasi aktif"),h("div",{class:"row"},h("button",{class:"p",onclick:()=>{S.min=Math.max(0,Math.min(100,+$("mn").value||0));S.anim=$("an").checked?1:0;save();go("teach")}},"Simpan pengaturan"),h("button",{onclick:()=>{if(confirm("Hapus semua progres di perangkat ini?")){S={...D};save();go("home")}}},"Mulai ulang / ganti profil"))),h("div",{class:"card"},h("h3",{},"Rancangan terakhir siswa"),Object.keys(S.task).length?Object.entries(S.task).map(([k,v])=>h("p",{},h("strong",{},k+": "),v)):h("p",{},"Belum ada.")),h("p",{},"Jumlah soal dan waktu tantangan belum dapat diatur di versi ini."))}
+function cert(a){if(!S.done.boss){a.append(h("div",{class:"card"},h("h2",{},"Sertifikat belum tersedia"),h("p",{},"Kalahkan Raja Garis Kusut dan selesaikan semua misi untuk mendapatkannya.")));return}
+a.append(h("div",{class:"cert card"},h("h1",{},"Sertifikat Penyelesaian"),h("p",{},"diberikan kepada"),h("h2",{},S.name||"Petualang"),h("p",{},"yang telah menyelesaikan materi Mengembangkan Motif Dayak Berdasarkan Cerita Rakyat Kalimantan Tengah (Mulok, kelas XII)"),h("p",{},"Skor rata-rata: "+avg()+" · "+S.cd)),h("button",{class:"p noprint",onclick:()=>print()},"Cetak / simpan PDF"))}
+go("home");
+</script></body></html>
